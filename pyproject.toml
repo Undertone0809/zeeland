@@ -21,7 +21,7 @@ homepage = "https://github.com/Undertone0809/zeeland"
 [tool.poetry.dependencies]
 python = "^3.8"
 
-typer = {extras = ["all"], version = "^0.4.0"}
+typer = {extras = ["all"], version = ">=0.4,<0.13"}
 rich = "^10.14.0"
 
 [tool.poetry.dev-dependencies]
