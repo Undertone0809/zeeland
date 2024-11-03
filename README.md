@@ -7,8 +7,7 @@ Zeeland's core infrastructure serves the following frameworks:
 | Cogit   | LLM MultiAgent task inference and autonomous orchestration framework/Comming soon                                                      |
 | [Promptulate](https://github.com/Undertone0809/promptulate)   | A LLM application and Agent development framework.                                                      |
 
-
-## TODO 
+## TODO
 
 The following libraries are under development and will be released soon:
 
@@ -23,7 +22,6 @@ The following libraries are under development and will be released soon:
 | [imarkdown](https://github.com/Undertone0809/imarkdown)       | A practical Markdown image URL converter.                                                               |
 | [cushy-serial](https://github.com/Undertone0809/cushy-serial) | A lightweight Python serial library. You can create a serial program easily.                         |
 | [ecjtu](https://github.com/Undertone0809/ecjtu)               | ecjtu API SDK service, best practices for client SDK design.                                           |
-
 
 ## Quick start
 
@@ -52,10 +50,39 @@ or with `Poetry`:
 poetry run zeeland --help
 ```
 
+### Basic Usage
+
+Create a metadata file in the default storage path.
+
+```python
+import json
+import os
+
+from zeeland import get_default_storage_path
+
+
+def main():
+    storage_path = get_default_storage_path("test")
+    metadata_path = os.path.join(storage_path, "metadata.json")
+
+    metadata = {"name": "test", "version": "1.0.0", "description": "Test metadata file"}
+
+    with open(metadata_path, "w") as f:
+        json.dump(metadata, f, indent=4)
+
+    print(f"Created metadata file at: {metadata_path}")
+    with open(metadata_path, "r") as f:
+        print("Content:")
+        print(json.dumps(json.load(f), indent=4))
+
+
+if __name__ == "__main__":
+    main()
+```
+
 ### Makefile usage
 
 [`Makefile`](https://github.com/Undertone0809/zeeland/blob/main/Makefile) contains a lot of functions for faster development.
-
 
 <details>
 <summary>Install all dependencies and pre-commit hooks</summary>
@@ -83,10 +110,7 @@ make pre-commit-install
 Automatic formatting uses `ruff`.
 
 ```bash
-make polish-codestyle
-
-# or use synonym
-make formatting
+make format
 ```
 
 Codestyle checks only, without rewriting files:
