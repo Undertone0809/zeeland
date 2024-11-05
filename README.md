@@ -40,18 +40,6 @@ conda activate zeeland
 pip install poetry
 ```
 
-Then you can run the client using the following command:
-
-```bash
-zeeland --help
-```
-
-or with `Poetry`:
-
-```bash
-poetry run zeeland --help
-```
-
 ### Basic Usage
 
 Create a metadata file in the default storage path.
@@ -80,6 +68,37 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
+The metadata file will be saved in the default storage path, which is `~/.zeeland/test/metadata.json`.
+
+Singleton usage
+
+```python
+from zeeland import Singleton, singleton
+
+
+@singleton()
+class TestSingleton:
+    pass
+
+
+instance1 = TestSingleton()
+instance2 = TestSingleton()
+
+assert instance1 is instance2
+
+
+class TestSingletonWithArgs(metaclass=Singleton):
+    def __init__(self, value):
+        self.value = value
+
+
+instance1 = TestSingletonWithArgs("test1")
+instance2 = TestSingletonWithArgs("test2")
+
+assert instance1 is instance2
+assert instance1.value == "test1"
 ```
 
 ### Makefile usage
