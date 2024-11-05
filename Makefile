@@ -18,10 +18,9 @@ VERSION := latest
 .PHONY: lock install  polish-codestyle formatting test check-codestyle lint docker-build docker-remove cleanup help
 
 lock:
-	poetry lock -n && poetry export --without-hashes > requirements.txt
+	poetry lock -n
 
 install:
-	poetry lock -n && poetry export --without-hashes > requirements.txt
 	poetry install -n
 
 polish-codestyle:
