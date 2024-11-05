@@ -1,11 +1,14 @@
 # Zeeland
 
+![coverage](./assets/images/coverage.svg)
+
 Zeeland's core infrastructure serves the following frameworks:
 
 | Lib                                             | Description                                                                                             |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | Cogit   | LLM MultiAgent task inference and autonomous orchestration framework/Comming soon                                                      |
 | [Promptulate](https://github.com/Undertone0809/promptulate)   | A LLM application and Agent development framework.                                                      |
+| [Gcop](https://github.com/Undertone0809/gcop)                 | Your git AI copilot.                                                                                   |
 
 ## TODO
 
@@ -14,7 +17,6 @@ The following libraries are under development and will be released soon:
 | Lib                                             | Description                                                                                             |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [UACP](https://github.com/Undertone0809/UACP)                 | Universal Agent Communication Protocol.                                                                  |
-| [Gcop](https://github.com/Undertone0809/gcop)                 | Your git AI copilot.                                                                                   |
 | [P3G](https://github.com/Undertone0809/P3G)                   | Python Package Project Generator.                                                                       |
 | [cushy-storage](https://github.com/Undertone0809/cushy-storage) | A lightweight ORM framework that provides disk caching for Python objects.                             |
 | [omnius](https://github.com/Undertone0809/omnius)             | A lightweight event bus framework. You can easily build a powerful event bus in your project.        |
