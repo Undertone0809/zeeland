@@ -96,8 +96,8 @@ def test_exception_handler_registration():
 
 
 def test_multiple_loggers_exception_handling():
-    logger1 = Logger("test1")
-    logger2 = Logger("test2")
+    logger1 = Logger("test1")  # noqa: F841
+    logger2 = Logger("test2")  # noqa: F841
 
     try:
         raise ValueError("Test multi-logger exception")
@@ -128,8 +128,8 @@ def test_multiple_loggers_exception_handling():
 
 
 def test_keyboard_interrupt_handling():
-    logger1 = Logger("test1")
-    logger2 = Logger("test2")
+    logger1 = Logger("test1")  # noqa: F841
+    logger2 = Logger("test2")  # noqa: F841
 
     # Test KeyboardInterrupt handling
     ExceptionHandler.handle_exception(KeyboardInterrupt, KeyboardInterrupt(), None)
