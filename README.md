@@ -25,6 +25,20 @@ The following libraries are under development and will be released soon:
 | [cushy-serial](https://github.com/Undertone0809/cushy-serial) | A lightweight Python serial library. You can create a serial program easily.                         |
 | [ecjtu](https://github.com/Undertone0809/ecjtu)               | ecjtu API SDK service, best practices for client SDK design.                                           |
 
+## Why build it?
+
+There are two main challenges in Zeeland's Python library development:
+
+1. **Reducing Circular Dependencies**: The framework provides a structured way to manage and minimize circular dependencies between components, making the codebase more maintainable and easier to reason about.
+
+2. **Reusable Common Logic**: As the developer of multiple Python libraries, I found myself repeatedly implementing similar patterns and utilities. Zeeland extracts these common elements into a shared infrastructure, allowing better maintenance and consistency across different frameworks and libraries.
+
+## Features
+
+- **Logger**: A logger framework that can record exceptions and log messages to different files based on the framework.
+- **Singleton**: A singleton pattern implementation.
+- **Project Metadata**: A metadata framework that can record the project's metadata and save it to the default storage path.
+
 ## Quick start
 
 Conda package manager is recommended. Create a conda environment.
@@ -100,6 +114,17 @@ instance2 = TestSingletonWithArgs("test2")
 assert instance1 is instance2
 assert instance1.value == "test1"
 ```
+
+Logger usage
+
+```python
+from zeeland import Logger
+
+logger = Logger("test_framework")
+logger.info("Hello, Zeeland!")
+```
+
+Then you can see the log file in the default storage path. In this case, it is `~/.zeeland/test_framework/logs/{current_date}.log`.
 
 ### Makefile usage
 
